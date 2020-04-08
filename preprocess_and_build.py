@@ -263,3 +263,21 @@ if __name__ == '__main__':
         print(year, "done", elapsed)
         
         year += 5
+        
+    # preliminary analysis with selected keywords (most similar words)
+        
+    year = '2016-2019'
+        
+    con = Word2Vec.load('300d_20win_5y\\lipad'+year+'con.bin')
+    lib = Word2Vec.load('300d_20win_5y\\lipad'+year+'lib.bin')
+    dem = Word2Vec.load('300d_20win_5y\\lipad'+year+'dem.bin')
+    
+    print(con.most_similar('abortion'))
+    print(lib.most_similar('abortion'))
+    print(dem.most_similar('abortion'))
+    
+    m2 = Word2Vec.load('300d_20win\\lipad1921-1940.bin'))
+    m6 = Word2Vec.load('300d_20win\\lipad2001-2019.bin'))
+    
+    print(lib.most_similar('equality'))
+    print(dem.most_similar('equality'))
